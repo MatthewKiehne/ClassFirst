@@ -1,0 +1,7 @@
+Install Video: https://www.youtube.com/watch?v=76yO76auQRk&ab_channel=AhmedT.Ali
+
+Build Command: antlr4 -o ./Antlr.Gen -no-listener -visitor -Dlanguage=CSharp -package ClassFirst ClassFirst.g4
+Note: To run this command, "sl.g4" has to be in the current directory
+
+Learning Stuff:
+https://github.com/bkiers/tiny-language-antlr4

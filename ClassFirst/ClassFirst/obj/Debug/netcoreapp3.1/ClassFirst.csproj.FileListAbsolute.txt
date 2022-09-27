@@ -1,0 +1,16 @@
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\ClassFirst.exe
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\ClassFirst.deps.json
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\ClassFirst.runtimeconfig.json
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\ClassFirst.runtimeconfig.dev.json
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\ClassFirst.dll
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\ClassFirst.pdb
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.csproj.AssemblyReference.cache
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.AssemblyInfoInputs.cache
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.AssemblyInfo.cs
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.csproj.CoreCompileInputs.cache
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.dll
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.pdb
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.genruntimeconfig.cache
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\bin\Debug\netcoreapp3.1\Antlr4.Runtime.Standard.dll
+C:\Users\mclan\Desktop\ClassFirst\ClassFirst\ClassFirst\obj\Debug\netcoreapp3.1\ClassFirst.csproj.CopyComplete

@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "aTRCWawgQUwJTyCxQ6w8Z7lMsnE7RKhJlLBSAk87yM+FQLrqqtNuB2YyYNB4iXzLjzzSFJCvIUjbQTbcQjrQCw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mclan\\Desktop\\ClassFirst\\ClassFirst\\ClassFirst\\ClassFirst.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mclan\\.nuget\\packages\\antlr4.runtime.standard\\4.11.1\\antlr4.runtime.standard.4.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}
