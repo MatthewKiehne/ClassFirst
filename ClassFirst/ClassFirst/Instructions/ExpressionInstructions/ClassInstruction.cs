@@ -28,7 +28,6 @@ namespace ClassFirst.Instructions {
             Result<Value> result = new Result<Value>();
 
             // this gets called when a class gets constructed at runtime
-
             ClassInfo classInfo = ClassLookup.GetClassInfo(ClassName);
             Class c = new Class(classInfo.ClassName);
             if(classInfo.Type != null) {
@@ -39,8 +38,11 @@ namespace ClassFirst.Instructions {
             ScopeContainer.AddScope(classScope);
 
             foreach(FieldInstruction fi in classInfo.FieldInstructions) {
-                Field field = fi.Execute();
-                c.Fields.Add(field.GetName(), field);
+                Result<Field> field = fi.Execute();
+                if(field.HasErrors()) {
+                    return result.AddErrorsFrom(field).AddContext(_context);
+                }
+                c.Fields.Add(field.Resource.GetName(), field.Resource);
             }
 
             // Get the parametes for the constructor
@@ -50,28 +52,26 @@ namespace ClassFirst.Instructions {
                 Result<Value> par = constructorExpression.Execute();
                 
                 if(par.HasErrors()) {
-                    par.AddContext(_context);
-                    return par;
-                
+                    return par.AddContext(_context);
                 }
-                constructorParameters.Add(par.Obj);
+                constructorParameters.Add(par.Resource);
             }
 
             // find the constructor
             FunctionInfo constructorInfo = classInfo.GetConstructor(constructorParameters.ToArray());
 
             // run the constructor
-            Scope testingScope = ScopeContainer.Top();
             constructorInfo.AddParametesToCurrentScope(constructorParameters.ToArray());
             constructorInfo.RunInstruction();
 
             // remove the scope
             Scope topScope = ScopeContainer.Top();
             if(!topScope.Equals(classScope)) {
-                throw new Exception("Top level scope does not match one added");
+                return result.AddError("Top level scope does not match one added", _context);
             }
 
-            return new Value(ClassName, c);
+            Value v = new Value(ClassName, c);
+            return result.SetResource(v);
         }
     }
 }

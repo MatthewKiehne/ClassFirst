@@ -11,7 +11,7 @@ namespace ClassFirst.Visitors {
         public override ExpressionInstruction VisitIntExpression([NotNull] ClassFirstParser.IntExpressionContext context) {
             string intValue = context.Int().GetText();
             int value = int.Parse(intValue);
-            IntInstruction intInstruction = new IntInstruction(value);
+            IntInstruction intInstruction = new IntInstruction(null, value);
             return intInstruction;
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Antlr4.Runtime;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +7,10 @@ namespace ClassFirst.Instructions {
     public class BlockInstruction : StatementInstruction {
 
         public StatementInstruction[] Instructions { get; private set; }
-        public BlockInstruction(StatementInstruction[] instructions) {
+        private RuleContext _context;
+        public BlockInstruction(RuleContext context, StatementInstruction[] instructions) {
             Instructions = instructions;
+            _context = context;
         }
 
         public Empty Execute() {
@@ -25,6 +28,14 @@ namespace ClassFirst.Instructions {
 
             ScopeContainer.RemoveTopScope();
             return new Empty();
+        }
+
+        Result<Empty> Instruction<Empty>.Execute() {
+            throw new NotImplementedException();
+        }
+
+        public RuleContext GetContext() {
+            return _context;
         }
     }
 }

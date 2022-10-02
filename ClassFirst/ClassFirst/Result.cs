@@ -6,7 +6,7 @@ using System.Text;
 namespace ClassFirst {
     public class Result<T> {
 
-        public T Obj { get; private set; }
+        public T Resource { get; private set; }
         public string ErrorMessage { get; set; }
         public List<RuleContext> ErrorContexts { get; private set; }
 
@@ -14,26 +14,30 @@ namespace ClassFirst {
             ErrorContexts = new List<RuleContext>();
         }
 
-        public void AddContext(RuleContext context) {
+        public Result<T> AddContext(RuleContext context) {
             ErrorContexts.Add(context);
+            return this;
         }
 
-        public void SetObj(T obj) {
-            Obj = obj;
+        public Result<T> SetResource(T obj) {
+            Resource = obj;
+            return this;
         }
 
         public bool HasErrors() {
             return ErrorMessage != null && ErrorContexts.Count != 0;
         }
 
-        public void AddError(string message, RuleContext context) {
+        public Result<T> AddError(string message, RuleContext context) {
             ErrorMessage = message;
             ErrorContexts.Add(context);
+            return this;
         }
 
-        public void AddErrorsFrom(Result<object> result) {
+        public Result<T> AddErrorsFrom<B>(Result<B> result) {
             ErrorMessage = result.ErrorMessage;
             ErrorContexts.AddRange(result.ErrorContexts);
+            return this;
         }
     }
 }

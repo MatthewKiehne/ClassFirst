@@ -50,8 +50,8 @@ namespace ClassFirst.Visitors {
             ExpressionVisitor expressionVisitor = new ExpressionVisitor();
             ExpressionInstruction expressionInstruction = expressionVisitor.Visit(context.exception.Context);
 
-            VariableInstruction variableInstruction = new VariableInstruction(variableName, typeName, expressionInstruction);
-            FieldInstruction fieldInstruction = new FieldInstruction(mod, variableInstruction);
+            VariableInstruction variableInstruction = new VariableInstruction(null, variableName, typeName, expressionInstruction);
+            FieldInstruction fieldInstruction = new FieldInstruction(null, mod, variableInstruction);
             //workingClassInstructions.FieldInstructions.Add(fieldInstruction);
 
             return workingClassInstructions;

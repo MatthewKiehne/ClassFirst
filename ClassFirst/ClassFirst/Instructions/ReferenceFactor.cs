@@ -16,7 +16,6 @@ namespace ClassFirst.Instructions {
             } else {
                 AddReferenceType(type);
             }
-
         }
 
         private static void AddReferenceType(Type type) {
@@ -24,8 +23,8 @@ namespace ClassFirst.Instructions {
         }
 
         private static ExpressionInstruction GetPrimitiveInstruction(Type type) {
-            if(type.Equals(typeof(int))) {
-                return new IntPrimitiveInstruction(0);
+            if(type.Equals(Primitive.IntType)) {
+                return new IntPrimitiveInstruction(null, 0);
             }
             throw new Exception("primitive type not found");
         }
@@ -35,8 +34,8 @@ namespace ClassFirst.Instructions {
             ExpressionInstruction primitiveInstruction = GetPrimitiveInstruction(type);
 
             // create the field
-            VariableInstruction variableInstruction = new VariableInstruction(Primitive.DefaultVariableName, Primitive.DefaultVariableType, primitiveInstruction);
-            FieldInstruction fieldInstruction = new FieldInstruction(Modifier.Public, variableInstruction);
+            VariableInstruction variableInstruction = new VariableInstruction(null, Primitive.DefaultVariableName, Primitive.DefaultVariableType, primitiveInstruction);
+            FieldInstruction fieldInstruction = new FieldInstruction(null, Modifier.Public, variableInstruction);
 
             // create the constructor params
             KeyValuePair<string, string>[] intParams = new KeyValuePair<string, string>[1];
@@ -45,8 +44,8 @@ namespace ClassFirst.Instructions {
 
             // create the constructor logic
             List<StatementInstruction> statementInstructions = new List<StatementInstruction>();
-            FindVariableInstruction findVariable = new FindVariableInstruction(Primitive.DefaultParameterName);
-            AssignmentInstruction assignmentInstruction = new AssignmentInstruction(Primitive.DefaultVariableName, findVariable);
+            FindVariableInstruction findVariable = new FindVariableInstruction(null, Primitive.DefaultParameterName);
+            AssignmentInstruction assignmentInstruction = new AssignmentInstruction(null, Primitive.DefaultVariableName, findVariable);
             statementInstructions.Add(assignmentInstruction);
             FunctionInfo constructorInfo = new FunctionInfo(parameterDeclaration, statementInstructions);
 

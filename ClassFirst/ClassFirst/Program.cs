@@ -13,12 +13,12 @@ namespace ClassFirst {
             ReferenceFactor.AddReference(typeof(int));
 
             // create an int
-            IntInstruction firstInstruction = new IntInstruction(24);
-            IntInstruction secondInstruction = new IntInstruction(11);
+            IntInstruction firstInstruction = new IntInstruction(null, 24);
+            IntInstruction secondInstruction = new IntInstruction(null, 11);
 
-            OperationInstruction opInstsruction = new OperationInstruction(firstInstruction, secondInstruction, Operator.Add);
-            Value added = opInstsruction.Execute();
-            Value defaultValue = ((Class)added.Object).GetDefaultValue();
+            OperationInstruction opInstsruction = new OperationInstruction(null, firstInstruction, secondInstruction, Operator.Add);
+            Result<Value> added = opInstsruction.Execute();
+            Value defaultValue = ((Class)added.Resource.Object).GetDefaultValue();
             Console.WriteLine(defaultValue);
         }
     }
